@@ -40,3 +40,21 @@ pip install pandas faker azure-storage-blob
 
 # Execute the ingestion pipeline script
 python generate_and_upload.py
+
+Step 2: Relational Warehouse Preparation
+Before moving data, the destination Azure SQL Database initializes an isolated schema to safely contain incoming data streams before transformation.
+
+CREATE SCHEMA staging;
+GO
+
+CREATE TABLE staging.raw_transactions (
+    transaction_id VARCHAR(50),
+    sender_id VARCHAR(50),
+    source_country VARCHAR(50),
+    destination_country VARCHAR(50),
+    amount_zar DECIMAL(18, 2),
+    exchange_rate DECIMAL(18, 4),
+    status VARCHAR(20),
+    timestamp DATETIME
+);
+GO
