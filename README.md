@@ -137,10 +137,3 @@ Displays a dedicated workspace listing specific sender_id references flagged as 
 Data Minimization: No real or unhashed Personally Identifiable Information (PII) such as phone numbers, banking data, or real names are generated or stored, completely aligning with POPIA (South Africa) and GDPR compliance.
 
 Separation of Concerns: End users and BI platforms are restricted exclusively to the gold data schema views, protecting operational staging layers from external query overhead or exposure.
-
-***
-
-### 💡 Tips for uploading to GitHub:
-1. Make sure your `generate_and_upload.py` script **does not** hardcode your actual Azure Connection String or database password when you push it to public GitHub. Use environment variables or place dummy text (like `"YOUR_CONNECTION_STRING"`) before committing.
-2. Add a `.gitignore` file to your directory and add `profiles.yml` and `venv/` to it so you don't accidentally leak secrets or upload massive system folders to your repository.
-
