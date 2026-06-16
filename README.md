@@ -58,3 +58,89 @@ CREATE TABLE staging.raw_transactions (
     timestamp DATETIME
 );
 GO
+
+Step 3: Azure Data Factory (ADF) Ingestion Workflow
+Within Azure Data Factory, automated data pipelines are established using distinct connection pathways:
+
+Linked Services: ls_blob_remitguard (Secure Access Key Auth) and ls_sqldb_remitguard (SQL Database Authentication).
+
+Pipeline Logic (pl_ingest_remit_data): Consists of sequential Copy Data Activities. A green success constraint link is configured so that the UX logs are only ingested if the transactional data loads successfully, preserving cross-table analytical integrity.
+
+Step 4: Analytical Modeling & Data Cleansing (dbt)
+The warehouse transitions raw data into structured, clean schemas using a multi-tiered modeling approach within dbt.
+
+Silver Layer (Deduplication & Schema Enforcement)
+To handle potential network retries or duplicate entries common in digital remittance transfers, a SQL window function filters out duplicate payloads, ensuring that only the latest unique record passes into the analytical layer:
+
+-- silver_transactions.sql
+{{ config(schema='silver') }}
+
+WITH ranked_transactions AS (
+    SELECT 
+        *, 
+        ROW_NUMBER() OVER (PARTITION BY transaction_id ORDER BY timestamp DESC) as row_num
+    FROM {{ source('azure_staging', 'raw_transactions') }}
+)
+SELECT 
+    transaction_id, 
+    sender_id, 
+    UPPER(destination_country) as destination_country, 
+    amount_zar, 
+    transaction_status, 
+    transaction_at
+FROM ranked_transactions 
+WHERE row_num = 1
+
+Gold Layer (Business Value Data Marts)
+mart_conversion_funnel: Aggregates application events to trace customer journey drops and completion cycles.
+
+mart_customer_retention: Evaluates active sending cycles and tracks customer inactivity past a 30-day window to identify churn risk.
+
+Step 5: Data Quality Testing & Governance
+Data integrity constraints are strictly enforced using native dbt test suites before any tables are exposed to business intelligence users.
+
+# models/schema.yml
+version: 2
+models:
+  - name: silver_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+
+# Compile code into Azure SQL and trigger data validation audits
+dbt run
+dbt test
+
+📊 Business Intelligence & Self-Service Insights
+The visualization layer connects straight to the Gold Schema inside Azure SQL Database. It is structured around two interactive dashboards built to help teams prioritize people and product improvements:
+
+1. User Experience Onboarding & Funnel Analytics
+Tracks customer velocity and drop-offs across the transaction flow (App Open ➡️ Rate Calculated ➡️ Transfer Initiated ➡️ Transfer Settled).
+
+Implements native, lightweight DAX Card Measures to showcase performance at a glance, keeping the compute load on the warehouse minimal:
+
+Overall Conversion Rate (%) = 
+DIVIDE(
+    SUM(mart_conversion_funnel[total_transfers_completed]), 
+    SUM(mart_conversion_funnel[total_app_opens]), 
+    0
+)
+
+2. Retention Analytics & Churn Matrix
+Implements a segmentation matrix categorizing active regional senders into actionable lifecycle buckets: Active / Safe, Medium Risk, and High Churn Risk.
+
+Displays a dedicated workspace listing specific sender_id references flagged as high churn risks, giving marketing and growth teams a direct list of users to contact with support or targeted promotional campaigns.
+
+🔒 Security & Compliance Principles
+Data Minimization: No real or unhashed Personally Identifiable Information (PII) such as phone numbers, banking data, or real names are generated or stored, completely aligning with POPIA (South Africa) and GDPR compliance.
+
+Separation of Concerns: End users and BI platforms are restricted exclusively to the gold data schema views, protecting operational staging layers from external query overhead or exposure.
+
+***
+
+### 💡 Tips for uploading to GitHub:
+1. Make sure your `generate_and_upload.py` script **does not** hardcode your actual Azure Connection String or database password when you push it to public GitHub. Use environment variables or place dummy text (like `"YOUR_CONNECTION_STRING"`) before committing.
+2. Add a `.gitignore` file to your directory and add `profiles.yml` and `venv/` to it so you don't accidentally leak secrets or upload massive system folders to your repository.
+
