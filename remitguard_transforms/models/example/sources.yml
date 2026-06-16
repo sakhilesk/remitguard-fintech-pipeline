@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: azure_staging
+    schema: staging
+    tables:
+      - name: raw_transactions
+      - name: raw_ux_logs

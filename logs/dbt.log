@@ -1,0 +1,218 @@
+[0m14:58:03.048707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000295F058D0A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000295F3B20A40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000295F2EB60F0>]}
+
+
+============================== 14:58:03.093177 | e000fcaa-3ffc-40f6-8ace-cd1c3d162ba7 ==============================
+[0m14:58:03.093177 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:58:03.095185 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\EONCLOUDSOLUTIONS\\.dbt', 'invocation_command': 'dbt init remitguard_transforms', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:58:03.130962 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\EONCLOUDSOLUTIONS\.dbt
+[0m14:58:03.140316 [debug] [MainThread]: Starter project path: C:\Users\EONCLOUDSOLUTIONS\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m14:58:03.191450 [info ] [MainThread]: 
+Your new dbt project "remitguard_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:58:03.196912 [info ] [MainThread]: Setting up your profile.
+[0m15:11:37.277585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9C6FD4C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9CB31580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9D3AE1E0>]}
+
+
+============================== 15:11:37.285042 | 3a1d0586-e199-46de-85f4-424d0a95418e ==============================
+[0m15:11:37.285042 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:11:37.286464 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\EONCLOUDSOLUTIONS\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m15:11:37.336451 [info ] [MainThread]: dbt version: 1.11.11
+[0m15:11:37.339103 [info ] [MainThread]: python version: 3.12.0
+[0m15:11:37.340192 [info ] [MainThread]: python path: C:\Users\EONCLOUDSOLUTIONS\AppData\Local\Programs\Python\Python312\python.exe
+[0m15:11:37.341281 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m15:11:37.592691 [info ] [MainThread]: Using profiles dir at C:\Users\EONCLOUDSOLUTIONS\.dbt
+[0m15:11:37.593936 [info ] [MainThread]: Using profiles.yml file at C:\Users\EONCLOUDSOLUTIONS\.dbt\profiles.yml
+[0m15:11:37.594946 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml
+[0m15:11:37.595951 [info ] [MainThread]: adapter type: sqlserver
+[0m15:11:37.597329 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:11:37.598444 [info ] [MainThread]: Configuration:
+[0m15:11:37.601036 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:11:37.602041 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:11:37.604150 [info ] [MainThread]: Required dependencies:
+[0m15:11:37.606153 [debug] [MainThread]: Executing "git --help"
+[0m15:11:37.652363 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:11:37.653367 [debug] [MainThread]: STDERR: "b''"
+[0m15:11:37.654426 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:11:37.655755 [info ] [MainThread]: Connection:
+[0m15:11:37.656787 [info ] [MainThread]:   server: fintecserver.database.windows.net
+[0m15:11:37.657867 [info ] [MainThread]:   port: 1433
+[0m15:11:37.658880 [info ] [MainThread]:   database: free-sql-db-0549829
+[0m15:11:37.659993 [info ] [MainThread]:   schema: gold
+[0m15:11:37.662029 [info ] [MainThread]:   UID: fintecadmin
+[0m15:11:37.665027 [info ] [MainThread]:   authentication: sql
+[0m15:11:37.666421 [info ] [MainThread]:   retries: 3
+[0m15:11:37.667440 [info ] [MainThread]:   login_timeout: 0
+[0m15:11:37.668718 [info ] [MainThread]:   query_timeout: 0
+[0m15:11:37.669740 [info ] [MainThread]:   trace_flag: False
+[0m15:11:37.672265 [info ] [MainThread]:   encrypt: True
+[0m15:11:37.673332 [info ] [MainThread]:   trust_cert: False
+[0m15:11:37.674467 [info ] [MainThread]: Registered adapter: sqlserver=1.10.0
+[0m15:11:38.409622 [warn ] [MainThread]: [[33mWARNING[0m]: When True, uses SQL Server-native string type mappings: STRING -> VARCHAR(MAX), NCHAR -> NCHAR(1), NVARCHAR -> NVARCHAR(4000). When False (default), preserves legacy mappings: STRING and NVARCHAR -> VARCHAR(8000), NCHAR -> CHAR(1). The new behaviour is intended to become the default in a future release.
+You may opt into the new behavior sooner by setting `flags.dbt_sqlserver_use_native_string_types` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m15:11:38.412065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '3a1d0586-e199-46de-85f4-424d0a95418e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9EC05370>]}
+[0m15:11:38.414289 [debug] [MainThread]: Acquiring new sqlserver connection 'debug'
+[0m15:11:38.415288 [debug] [MainThread]: Using sqlserver connection "debug"
+[0m15:11:38.415288 [debug] [MainThread]: On debug: select 1 as id
+[0m15:11:38.416518 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:11:38.417800 [debug] [MainThread]: sqlserver adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=fintecserver.database.windows.net,1433;Database=free-sql-db-0549829;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;UID={fintecadmin};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-sqlserver/1.10.0;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m15:11:38.829717 [debug] [MainThread]: sqlserver adapter: Error running SQL: select 1 as id
+[0m15:11:38.829717 [debug] [MainThread]: sqlserver adapter: Rolling back transaction.
+[0m15:11:38.829717 [debug] [MainThread]: On debug: No close available on handle
+[0m15:11:38.829717 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m15:11:38.829717 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m15:11:38.829717 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml> not found
+
+[0m15:11:38.845652 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  ('28000', "[28000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Login failed for user 'fintecadmin'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 18 for SQL Server]Invalid connection string attribute (0); [28000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Login failed for user 'fintecadmin'. (18456); [28000] [Microsoft][ODBC Driver 18 for SQL Server]Invalid connection string attribute (0)")
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m15:11:38.849206 [debug] [MainThread]: Command `dbt debug` failed at 15:11:38.849206 after 1.88 seconds
+[0m15:11:38.850387 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:11:38.852555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9E637E30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9E822CC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF9E60EBA0>]}
+[0m15:11:38.853952 [debug] [MainThread]: Flushing usage events
+[0m15:11:40.334086 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:12:50.135219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243EE7D7200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243EF9C8170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243EE7343B0>]}
+
+
+============================== 15:12:50.142010 | 11daaab3-d9d1-4d62-894a-0824f947e288 ==============================
+[0m15:12:50.142010 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:12:50.144355 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\EONCLOUDSOLUTIONS\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m15:12:50.185762 [info ] [MainThread]: dbt version: 1.11.11
+[0m15:12:50.187195 [info ] [MainThread]: python version: 3.12.0
+[0m15:12:50.188314 [info ] [MainThread]: python path: C:\Users\EONCLOUDSOLUTIONS\AppData\Local\Programs\Python\Python312\python.exe
+[0m15:12:50.189480 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m15:12:50.433779 [info ] [MainThread]: Using profiles dir at C:\Users\EONCLOUDSOLUTIONS\.dbt
+[0m15:12:50.436167 [info ] [MainThread]: Using profiles.yml file at C:\Users\EONCLOUDSOLUTIONS\.dbt\profiles.yml
+[0m15:12:50.437215 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml
+[0m15:12:50.438247 [info ] [MainThread]: adapter type: sqlserver
+[0m15:12:50.440350 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:12:50.441452 [info ] [MainThread]: Configuration:
+[0m15:12:50.443459 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:12:50.445459 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:12:50.446458 [info ] [MainThread]: Required dependencies:
+[0m15:12:50.448458 [debug] [MainThread]: Executing "git --help"
+[0m15:12:50.487793 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:12:50.490011 [debug] [MainThread]: STDERR: "b''"
+[0m15:12:50.491116 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:12:50.492152 [info ] [MainThread]: Connection:
+[0m15:12:50.494503 [info ] [MainThread]:   server: fintecserver.database.windows.net
+[0m15:12:50.494503 [info ] [MainThread]:   port: 1433
+[0m15:12:50.495935 [info ] [MainThread]:   database: free-sql-db-0549829
+[0m15:12:50.497052 [info ] [MainThread]:   schema: gold
+[0m15:12:50.498073 [info ] [MainThread]:   UID: fintecserver
+[0m15:12:50.500103 [info ] [MainThread]:   authentication: sql
+[0m15:12:50.501102 [info ] [MainThread]:   retries: 3
+[0m15:12:50.503101 [info ] [MainThread]:   login_timeout: 0
+[0m15:12:50.504099 [info ] [MainThread]:   query_timeout: 0
+[0m15:12:50.507502 [info ] [MainThread]:   trace_flag: False
+[0m15:12:50.509572 [info ] [MainThread]:   encrypt: True
+[0m15:12:50.511744 [info ] [MainThread]:   trust_cert: False
+[0m15:12:50.512779 [info ] [MainThread]: Registered adapter: sqlserver=1.10.0
+[0m15:12:51.145607 [warn ] [MainThread]: [[33mWARNING[0m]: When True, uses SQL Server-native string type mappings: STRING -> VARCHAR(MAX), NCHAR -> NCHAR(1), NVARCHAR -> NVARCHAR(4000). When False (default), preserves legacy mappings: STRING and NVARCHAR -> VARCHAR(8000), NCHAR -> CHAR(1). The new behaviour is intended to become the default in a future release.
+You may opt into the new behavior sooner by setting `flags.dbt_sqlserver_use_native_string_types` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m15:12:51.146644 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '11daaab3-d9d1-4d62-894a-0824f947e288', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243F10307D0>]}
+[0m15:12:51.147960 [debug] [MainThread]: Acquiring new sqlserver connection 'debug'
+[0m15:12:51.147960 [debug] [MainThread]: Using sqlserver connection "debug"
+[0m15:12:51.149218 [debug] [MainThread]: On debug: select 1 as id
+[0m15:12:51.150562 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:12:51.150562 [debug] [MainThread]: sqlserver adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=fintecserver.database.windows.net,1433;Database=free-sql-db-0549829;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;UID={fintecserver};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-sqlserver/1.10.0;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m15:12:51.390045 [debug] [MainThread]: sqlserver adapter: Connected to db: free-sql-db-0549829
+[0m15:12:51.401025 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:12:51.403037 [debug] [MainThread]: On debug: Close
+[0m15:12:51.404037 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:12:51.405348 [info ] [MainThread]: [31m1 check failed:[0m
+[0m15:12:51.407689 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml> not found
+
+[0m15:12:51.409761 [debug] [MainThread]: Command `dbt debug` failed at 15:12:51.409761 after 1.49 seconds
+[0m15:12:51.410769 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:12:51.411775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243EF99C7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243F10307D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000243EF4116D0>]}
+[0m15:12:51.412907 [debug] [MainThread]: Flushing usage events
+[0m15:12:52.875738 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:17:40.994018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370995D1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370C07D6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370C9155E0>]}
+
+
+============================== 15:17:41.000854 | 473ed753-c0b4-477c-a88d-3a096333da73 ==============================
+[0m15:17:41.000854 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:17:41.002064 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\EONCLOUDSOLUTIONS\\.dbt', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m15:17:41.044198 [info ] [MainThread]: dbt version: 1.11.11
+[0m15:17:41.045249 [info ] [MainThread]: python version: 3.12.0
+[0m15:17:41.046323 [info ] [MainThread]: python path: C:\Users\EONCLOUDSOLUTIONS\AppData\Local\Programs\Python\Python312\python.exe
+[0m15:17:41.047715 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m15:17:41.289970 [info ] [MainThread]: Using profiles dir at C:\Users\EONCLOUDSOLUTIONS\.dbt
+[0m15:17:41.292319 [info ] [MainThread]: Using profiles.yml file at C:\Users\EONCLOUDSOLUTIONS\.dbt\profiles.yml
+[0m15:17:41.293344 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml
+[0m15:17:41.294382 [info ] [MainThread]: adapter type: sqlserver
+[0m15:17:41.296563 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:17:41.297636 [info ] [MainThread]: Configuration:
+[0m15:17:41.299068 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:17:41.301136 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:17:41.302421 [info ] [MainThread]: Required dependencies:
+[0m15:17:41.303421 [debug] [MainThread]: Executing "git --help"
+[0m15:17:41.345775 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:17:41.346777 [debug] [MainThread]: STDERR: "b''"
+[0m15:17:41.347960 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:17:41.348978 [info ] [MainThread]: Connection:
+[0m15:17:41.350058 [info ] [MainThread]:   server: fintecserver.database.windows.net
+[0m15:17:41.351073 [info ] [MainThread]:   port: 1433
+[0m15:17:41.352079 [info ] [MainThread]:   database: free-sql-db-0549829
+[0m15:17:41.353138 [info ] [MainThread]:   schema: gold
+[0m15:17:41.355169 [info ] [MainThread]:   UID: fintecserver
+[0m15:17:41.357169 [info ] [MainThread]:   authentication: sql
+[0m15:17:41.359737 [info ] [MainThread]:   retries: 3
+[0m15:17:41.360827 [info ] [MainThread]:   login_timeout: 0
+[0m15:17:41.362982 [info ] [MainThread]:   query_timeout: 0
+[0m15:17:41.364321 [info ] [MainThread]:   trace_flag: False
+[0m15:17:41.365434 [info ] [MainThread]:   encrypt: True
+[0m15:17:41.366550 [info ] [MainThread]:   trust_cert: False
+[0m15:17:41.367737 [info ] [MainThread]: Registered adapter: sqlserver=1.10.0
+[0m15:17:42.059735 [warn ] [MainThread]: [[33mWARNING[0m]: When True, uses SQL Server-native string type mappings: STRING -> VARCHAR(MAX), NCHAR -> NCHAR(1), NVARCHAR -> NVARCHAR(4000). When False (default), preserves legacy mappings: STRING and NVARCHAR -> VARCHAR(8000), NCHAR -> CHAR(1). The new behaviour is intended to become the default in a future release.
+You may opt into the new behavior sooner by setting `flags.dbt_sqlserver_use_native_string_types` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m15:17:42.062110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '473ed753-c0b4-477c-a88d-3a096333da73', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370E5C12B0>]}
+[0m15:17:42.063339 [debug] [MainThread]: Acquiring new sqlserver connection 'debug'
+[0m15:17:42.064488 [debug] [MainThread]: Using sqlserver connection "debug"
+[0m15:17:42.065488 [debug] [MainThread]: On debug: select 1 as id
+[0m15:17:42.067793 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:17:42.068793 [debug] [MainThread]: sqlserver adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=fintecserver.database.windows.net,1433;Database=free-sql-db-0549829;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;UID={fintecserver};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-sqlserver/1.10.0;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m15:17:42.279805 [debug] [MainThread]: sqlserver adapter: Connected to db: free-sql-db-0549829
+[0m15:17:42.293146 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:17:42.295293 [debug] [MainThread]: On debug: Close
+[0m15:17:42.296295 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:17:42.297347 [info ] [MainThread]: [31m1 check failed:[0m
+[0m15:17:42.299710 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\EONCLOUDSOLUTIONS\Documents\remitguard-pipeline\dbt_project.yml> not found
+
+[0m15:17:42.301776 [debug] [MainThread]: Command `dbt debug` failed at 15:17:42.301776 after 1.48 seconds
+[0m15:17:42.302784 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:17:42.303793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370C766390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370E0B2660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002370DFB0D10>]}
+[0m15:17:42.304802 [debug] [MainThread]: Flushing usage events
+[0m15:17:43.738304 [debug] [MainThread]: An error was encountered while trying to flush usage events

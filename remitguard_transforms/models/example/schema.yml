@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: silver_transactions
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: amount_zar
+        tests:
+          - not_null
