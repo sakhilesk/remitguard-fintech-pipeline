@@ -1,18 +1,18 @@
 # RemitGuard & Retention IQ: Cross-Border Fintech Data Platform
 
-An end-to-end cloud data engineering platform designed to ingest, orchestrate, transform, and visualize cross-border remittance transactions and user experience (UX) telemetry logs. This project closely mirrors the production data ecosystem of a high-growth fintech platform (such as Mama Money), focusing heavily on analytical data quality, customer conversion funnels, and automated retention matrices.
+An end-to-end cloud data engineering platform designed to ingest, orchestrate, transform, and visualize cross-border remittance transactions and user experience (UX) telemetry logs. This project cl[...]
 
 ---
 
 ## 🏗️ Architecture & Data Flow
 
-The platform utilizes a modern cloud data stack built entirely on Microsoft Azure, leveraging programmatic data generation, automated orchestration pipelines, robust ELT warehouse transformations, and executive business intelligence reporting.
+The platform utilizes a modern cloud data stack built entirely on Microsoft Azure, leveraging programmatic data generation, automated orchestration pipelines, robust ELT warehouse transformations, [...]
 
 [In-Memory Data Generator] ➡️ [Azure Blob Storage (Bronze)] ➡️ [Azure Data Factory]
 ⬇️
 [Power BI Dashboards (Gold)] ⬅️ [dbt Core Transformations (Silver/Gold)] ⬅️ [Azure SQL DB (Staging)]
 
-1. **Ingestion Layer:** A local Python script simulating transactional and application microservices generates randomized fintech event streams and uploads them as CSV payloads directly into cloud storage via the `azure-storage-blob` SDK.
+1. **Ingestion Layer:** A local Python script simulating transactional and application microservices generates randomized fintech event streams and uploads them as CSV payloads directly into cloud[...]
 2. **Landing Zone (Bronze):** Azure Storage Account configured with hierarchical namespaces to separate data streams into distinct operational directories (`/transactions` and `/ux-logs`).
 3. **Orchestration Layer:** Azure Data Factory (ADF) handles job scheduling, connection strings, and automated data ingestion.
 4. **Data Warehouse (Staging):** Azure SQL Database acts as the centralized relational compute engine, initially hosting raw landing tables.
@@ -32,7 +32,7 @@ The platform utilizes a modern cloud data stack built entirely on Microsoft Azur
 ## 🚀 Step-by-Step Project Implementation
 
 ### Step 1: Programmatic Data Mocking & Azure Ingestion
-The Python script `generate_and_upload.py` acts as our operational source layer. It creates 150 transaction batches alongside their respective UX application journey steps, mapping corridors across regional African borders, and uploads them to the cloud.
+The Python script `generate_and_upload.py` acts as our operational source layer. It creates 150 transaction batches alongside their respective UX application journey steps, mapping corridors acros[...]
 
 ```bash
 # Install dependencies
@@ -64,13 +64,13 @@ Within Azure Data Factory, automated data pipelines are established using distin
 
 Linked Services: ls_blob_remitguard (Secure Access Key Auth) and ls_sqldb_remitguard (SQL Database Authentication).
 
-Pipeline Logic (pl_ingest_remit_data): Consists of sequential Copy Data Activities. A green success constraint link is configured so that the UX logs are only ingested if the transactional data loads successfully, preserving cross-table analytical integrity.
+Pipeline Logic (pl_ingest_remit_data): Consists of sequential Copy Data Activities. A green success constraint link is configured so that the UX logs are only ingested if the transactional data lo[...]
 
 Step 4: Analytical Modeling & Data Cleansing (dbt)
 The warehouse transitions raw data into structured, clean schemas using a multi-tiered modeling approach within dbt.
 
 Silver Layer (Deduplication & Schema Enforcement)
-To handle potential network retries or duplicate entries common in digital remittance transfers, a SQL window function filters out duplicate payloads, ensuring that only the latest unique record passes into the analytical layer:
+To handle potential network retries or duplicate entries common in digital remittance transfers, a SQL window function filters out duplicate payloads, ensuring that only the latest unique record p[...]
 
 -- silver_transactions.sql
 {{ config(schema='silver') }}
@@ -114,10 +114,10 @@ dbt run
 dbt test
 
 📊 Business Intelligence & Self-Service Insights
-                                                       Link to the Dashboard
-                 https://app.powerbi.com/links/UDrCzpWB_j?ctid=51998145-5b74-4c67-a4bc-653fc4af7795&pbi_source=linkShare
 
-The visualization layer connects straight to the Gold Schema inside Azure SQL Database. It is structured around two interactive dashboards built to help teams prioritize people and product improvements:
+[Link to the Dashboard](https://app.powerbi.com/links/UDrCzpWB_j?ctid=51998145-5b74-4c67-a4bc-653fc4af7795&pbi_source=linkShare)
+
+The visualization layer connects straight to the Gold Schema inside Azure SQL Database. It is structured around two interactive dashboards built to help teams prioritize people and product improv[...]
 
 1. User Experience Onboarding & Funnel Analytics
 Tracks customer velocity and drop-offs across the transaction flow (App Open ➡️ Rate Calculated ➡️ Transfer Initiated ➡️ Transfer Settled).
@@ -134,9 +134,9 @@ DIVIDE(
 2. Retention Analytics & Churn Matrix
 Implements a segmentation matrix categorizing active regional senders into actionable lifecycle buckets: Active / Safe, Medium Risk, and High Churn Risk.
 
-Displays a dedicated workspace listing specific sender_id references flagged as high churn risks, giving marketing and growth teams a direct list of users to contact with support or targeted promotional campaigns.
+Displays a dedicated workspace listing specific sender_id references flagged as high churn risks, giving marketing and growth teams a direct list of users to contact with support or targeted prom[...]
 
 🔒 Security & Compliance Principles
-Data Minimization: No real or unhashed Personally Identifiable Information (PII) such as phone numbers, banking data, or real names are generated or stored, completely aligning with POPIA (South Africa) and GDPR compliance.
+Data Minimization: No real or unhashed Personally Identifiable Information (PII) such as phone numbers, banking data, or real names are generated or stored, completely aligning with POPIA (South [...]
 
 Separation of Concerns: End users and BI platforms are restricted exclusively to the gold data schema views, protecting operational staging layers from external query overhead or exposure.
