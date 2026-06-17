@@ -2,7 +2,6 @@
 
 An end-to-end cloud data engineering platform designed to ingest, orchestrate, transform, and visualize cross-border remittance transactions and user experience (UX) telemetry logs. This project cl[...]
 
-<a href="https://app.powerbi.com/links/UDrCzpWB_j?ctid=51998145-5b74-4c67-a4bc-653fc4af7795&pbi_source=linkShare&bookmarkGuid=76abaa1c-3043-42fb-896d-54153cbc9483">
 
 ## 🏗️ Architecture & Data Flow
 
