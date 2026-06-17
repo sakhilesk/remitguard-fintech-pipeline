@@ -115,7 +115,7 @@ dbt test
 
 📊 Business Intelligence & Self-Service Insights
 
-<a href="[https://app.powerbi.com/groups/me/reports/031f5247-dd84-47b6-99f8-79f11974eec8/7afb55fca0f9f413e212?experience=power-bi" target="_blank](https://app.powerbi.com/links/UDrCzpWB_j?ctid=51998145-5b74-4c67-a4bc-653fc4af7795&pbi_source=linkShare&bookmarkGuid=76abaa1c-3043-42fb-896d-54153cbc9483)">
+<a href="https://app.powerbi.com/links/UDrCzpWB_j?ctid=51998145-5b74-4c67-a4bc-653fc4af7795&pbi_source=linkShare&bookmarkGuid=76abaa1c-3043-42fb-896d-54153cbc9483">
 
 The visualization layer connects straight to the Gold Schema inside Azure SQL Database. It is structured around two interactive dashboards built to help teams prioritize people and product improv[...]
 
